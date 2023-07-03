@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/a11y-dark.min.css" integrity="sha512-Vj6gPCk8EZlqnoveEyuGyYaWZ1+jyjMPg8g4shwyyNlRQl6d3L9At02ZHQr5K6s5duZl/+YKMnM3/8pDhoUphg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>JavaScript Assignments</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h1>JavaScript Questions</h1>
+
+            <!-- Questions and Answers HTML DOM-->
+            <div class="dropboxes">
+                <h2>HTML DOM</h2>
+                <!-- Question 1 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">1. What are nodes in the DOM?</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <p>
+                            The DOM (Document Object Model) is a tree like representation of the HTML elements. 
+                            The nodes in the DOM are the tags, texts, attributes. Eg: <br>
+                            If we have the following HTML code:
+                            <pre>
+                                <code class="language-html">
+&lt;body&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;div&gt;This is a div element.&lt;/div&gt;
+    &lt;h1&gt;This is a heading.&lt;/h1&gt;
+&lt;/body&gt;
+                                </code>
+                            </pre>
+                            Then the dom nodes are the body, p, div and h1. Also the texts are the text nodes in the DOM
+                        </p>
+                    </div>
+                </div>
+                <!-- Question 2 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">2. Extract the text label of a button.</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">
+const btn = document.querySelector('button')
+document.write(btn.textContent)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">3. Create an element in DOM.</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">const ul = document.createElement('ul')</code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- Question 4 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">4. Create a new child element in DOM.</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">
+for(let i = 1; i <= 10; i++){
+    let list = document.createElement('li')
+    let text = document.createTextNode(`This is a list item ${i}`)
+    list.appendChild(text)
+    ul.appendChild(list)
+}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- Question 5 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">5. Replace the child element with new child element.</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">
+let list = document.createElement('li')
+let text = document.createTextNode(`This is a list item 100`)
+list.appendChild(text)
+const replace = ul.lastElementChild
+// This replaces the last item in the list
+ul.replaceChild(list, replace)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- Question 6 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">6. Select an element by element ID.</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">const p = document.getElementById('content')</code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- Question 7 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">7. Select an element by element Name.</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">const inputBar = document.getElementsByName('name')</code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- Quetsion 8 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">8. Select an elements with tag name using query selector function</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">const paragraphs = document.querySelectorAll('p')</code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Questions and Answers ES6 -->
+            <div class="dropboxes">
+                <h2>ES6 Functions</h2>
+                <!-- Question 1 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">1. What does "ES" mean in JS?</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <p>
+                            In JavaScript ES means ECMAScript which is the standard on which JavaScript is based.
+                            It is a scripting language specification developed and maintained by Ecma International, a standards organization.
+                            It defines the syntax, semantics, and behavior of the JavaScript programming language. Some of the versions of ECMAScript are ES5, ES6 etc.
+                        </p>
+                    </div>
+                </div>
+                <!-- Question 2 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">2. Difference between Regular function and arrow functions</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <p>
+                            The differences between regular functions and ES6 functions are as follows:
+                        </p>
+                        <table class="table">
+                            <tr>
+                                <td>S.N</td>
+                                <td>Regular Functions</td>
+                                <td>ES6 Functions</td>
+                            </tr>
+                            <tr>
+                                <td>1.</td>
+                                <td>The regular function can be invoked with the new keyword.</td>
+                                <td>The arrow function i.e. the ES6 function cannot be invoked using the new keyword.</td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>They have this keyword, i.e. the this keyword points towards its own attributes in case of regular functions.</td>
+                                <td>They have not this keyword binded, if we use this keyword in arrow functions, it returns closest non arrow function.</td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>The regular function has arguments object, i.e. if we don't know the number of arguments we can find it by using argument object.</td>
+                                <td>The arrow function does not have argumnet object binded to it.</td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>Syntax:
+                                    <pre>
+                                        <code class="language-javascript">
+function regularSum(a, b){
+    return a + b;
+}
+console.log(regularSum(9,6));
+                                        </code>
+                                    </pre>
+                                </td>
+                                <td>Syntax:
+                                    <pre>
+                                        <code class="language-javascript">
+const esSum = (a, b) => a + b
+console.log(esSum(9,6));
+                                        </code>
+                                    </pre>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- Question 3 -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">3. Examples of Regular function and ES6 functions?</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <p>ES6 Function (Arrow Function)</p>
+                        <pre>
+                            <code class="language-javascript">
+const esSum = (a, b) => a + b
+console.log(esSum(9,6));
+                            </code>
+                        </pre>
+                        <p>Regular Function</p>
+                        <pre>
+                            <code class="language-javascript">
+function regularSum(a, b){
+    return a + b;
+}
+console.log(regularSum(9,6));
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- Promise Example -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">Promise Example</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">
+/**
+* This function returns a promise.
+* A promise is basically like a realy life promise,
+* either it gets fulfilled (resolved) or 
+* the promise is not fullfilled(rejected).
+* This function takes name as a parameter and checks if the
+* argument passed is 'ram', if the argument is ram the promise gets resolved
+* else it gets rejected.
+* 
+* I have put a settimeout to simulate that the time delays.
+* 
+* For example: when fetching the data form api we may or may not get the data.
+* so if we get the data in return the promise is resolved and we get the data or
+* else we do not get the data and the promise is rejected.
+*/
+const displayRam = (name) => {
+    return new Promise((resolve, reject) => {
+        if(name.toLowerCase() === 'ram'){
+            setTimeout(() => {
+                resolve({username: "Ram", age: 20, email: 'ram@gmail.com'})
+            }, 2000)
+        }else{
+            reject({message: "The name passed is invalid"})
+        }
+    })
+}
+
+/***
+* In this function call the .then method is used to tell what to do after
+* the promise is resolved. If the argument passed is 'ram' then the promise
+* is resolved and the data is logged to the console, if the argument is
+* something else the promise is rejected and it goes to the .catch block 
+* and prints out the error.
+*/
+displayRam('ram')
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <!-- Async and Await Example -->
+                <div class="dropbox">
+                    <div class="dropbox__closed">
+                        <h4 class="dropbox__title">Async and Await Example</h4>
+                        <div class="dropbox__icon">
+                            <img src="./images/icon-chevron-down.svg" alt="icon">
+                        </div>
+                    </div>
+                    <div class="dropbox__description">
+                        <pre>
+                            <code class="language-javascript">
+/**
+* This is an asynchronous function.
+* A async function always returns a promise.
+* 
+* So, in this function we use the promise we created
+* in the promiseExample, since the promise can resolve or get rejected,
+* we do not know when we will get the data so we add async to tell javascript
+* that do something only after you have got the data till then do something else.
+* 
+* Async and await came into existence to avoid much promise chaining and callback hell.
+* 
+* In this function the function is called then the promise displayRam is called,
+* It waits till it gets the return and then logs the data.
+* 
+* If the argument is different then it logs an error in the console.
+*/
+const callingFunction = async () => {
+    const data = await displayRam('ram')
+    console.log("Data: ", data);
+}
+
+callingFunction()
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- highlight.js for code highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js" integrity="sha512-rdhY3cbXURo13l/WU9VlaRyaIYeJ/KBakckXIvJNAQde8DgpOmE+eZf7ha4vdqVjTtwQt69bD2wH2LXob/LB7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- javascript -->
+    <script src="./js/index.js"></script>
+    <script src="./js/promiseExample.js"></script>
+    <script src="./js/asyncExample.js"></script>
+</body>
+</html>
